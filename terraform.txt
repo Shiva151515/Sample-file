@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
@@ -14,3 +15,21 @@ module "ec2_instance" {
     Environment = "dev"
   }
 }
+=======
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+
+  name = "single-instance"
+
+  instance_type          = "t2.micro"
+  key_name               = "user1"
+  monitoring             = true
+  vpc_security_group_ids = ["sg-12345678"]
+  subnet_id              = "subnet-eddcdzz4"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
+>>>>>>> 732a6e21b63240c23ebd553a7a9ab0be096a082b
